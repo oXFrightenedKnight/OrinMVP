@@ -1,0 +1,40 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_27_1486)">
+<rect width="400" height="300" fill="url(#pattern0_27_1486)" fill-opacity="0.1"/>
+<g filter="url(#filter0_d_27_1486)">
+<path d="M285.333 160.667C285.333 214 248 240.667 203.627 256.133C201.303 256.921 198.779 256.883 196.48 256.027C152 240.667 114.667 214 114.667 160.667V86C114.667 83.171 115.79 80.4579 117.791 78.4575C119.791 76.4571 122.504 75.3333 125.333 75.3333C146.667 75.3333 173.333 62.5333 191.893 46.32C194.153 44.3893 197.028 43.3285 200 43.3285C202.972 43.3285 205.847 44.3893 208.107 46.32C226.773 62.64 253.333 75.3333 274.667 75.3333C277.496 75.3333 280.209 76.4571 282.209 78.4575C284.21 80.4579 285.333 83.171 285.333 86V160.667Z" stroke="url(#paint0_linear_27_1486)" stroke-width="21.3333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M200 107.333V150" stroke="url(#paint1_linear_27_1486)" stroke-width="21.3333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M200 192.667H200.107" stroke="url(#paint2_linear_27_1486)" stroke-width="21.3333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0_27_1486" patternContentUnits="objectBoundingBox" width="0.05" height="0.0666667">
+<use xlink:href="#image0_27_1486" transform="scale(0.0005 0.000666667)"/>
+</pattern>
+<filter id="filter0_d_27_1486" x="52" y="2" width="296" height="296" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0784314 0 0 0 0 0.278431 0 0 0 0 0.901961 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_27_1486"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_27_1486" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_27_1486" x1="200" y1="43.3285" x2="200" y2="256.698" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1447E6"/>
+<stop offset="1" stop-color="#0B2880"/>
+</linearGradient>
+<linearGradient id="paint1_linear_27_1486" x1="200.5" y1="107.333" x2="200.5" y2="150" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1447E6"/>
+<stop offset="1" stop-color="#0B2880"/>
+</linearGradient>
+<linearGradient id="paint2_linear_27_1486" x1="200" y1="182" x2="200" y2="203" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1447E6"/>
+<stop offset="1" stop-color="#0B2880"/>
+</linearGradient>
+<clipPath id="clip0_27_1486">
+<rect width="400" height="300" fill="white"/>
+</clipPath>
+<image id="image0_27_1486" width="100" height="100" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEhSURBVHgB7dixbQJBEAXQ4ciIKIGLEJmpwLgTd2CXgktwJaaDIyPkSiAiIADvIpzZYAIHY70nnbQ6TXRfu7NzEQAAAAAAAAAAAAAAAAAAAAAAf28QSXVdNx6NRq+DweDxdDotLq/X5VlOp9P3SCplIJvNZtI0zUdZTn4o6Y/H49NsNusjmSYSuhFGdQ6s7qJIJl0gZXc8x/UwvkzKkfYSyaQLZDgc/vojl/6yiGTSBVIa+MMdtYtIJmUP+c/SBVKOodUd5etIJuORtbqjfBnJpJtDttvt+HA4dHH7ptWXAbGNZNLtkLZtd3XoK8v+Sll/qUkn7a+Tqs4kZQCs1+DzzaseZ7XH7Pf7t/l8vgsAAAAAAAAAAAAAAAAAAAAAAL71CdQDRZy5UWGnAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>
