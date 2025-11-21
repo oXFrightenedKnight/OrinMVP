@@ -4,19 +4,19 @@ import { X, Check } from "lucide-react";
 
 export function ProblemSolutionSection() {
   const withoutItems = [
-    { label: "Stripe fees", value: "unknown" },
-    { label: "OpenAI tokens", value: "chaos" },
-    { label: "Neon storage", value: "sudden spike" },
-    { label: "Bandwidth", value: "guess yourself" },
-    { label: "Net revenue", value: "lol, calculate it manually" },
+    "No revenue transparency",
+    "Constant switching between 5+ dashboards",
+    "Surpising bills",
+    "Hours wasted on calculations every month",
+    "Zero automation",
   ];
 
   const withItems = [
-    "Everything is visible in one place",
-    "No delays",
-    "No shocking surprises",
-    "Real-time cost tracking",
-    "Automated calculations",
+    "Net revenue after ALL expenses",
+    "All providers integrated into one dashboard",
+    "Automatic alerts",
+    "Automatic calculations & forecasting",
+    "Shows where you can save money",
   ];
 
   return (
@@ -31,37 +31,37 @@ export function ProblemSolutionSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Without */}
-          <div className="bg-red-500/5 border border-red-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/40 transition-all duration-300">
+          <div className="bg-background border border-destructive/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center">
-                <X className="w-6 h-6 text-red-500" />
+              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+                <X className="w-6 h-6 text-destructive" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Without Our Service</h3>
+              <h3 className="text-2xl font-bold text-white">Without Orin</h3>
             </div>
 
             <div className="space-y-4">
               {withoutItems.map((item, index) => (
-                <div key={index} className="flex justify-between items-start group">
-                  <span className="text-gray-300 font-medium">{item.label}</span>
-                  <span className="text-red-400 italic text-sm">{item.value}</span>
+                <div key={index} className="flex items-start gap-3 group">
+                  <X className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-200 font-medium">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* With */}
-          <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center">
-                <Check className="w-6 h-6 text-cyan-400" />
+                <Check className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-white">With Our Service</h3>
+              <h3 className="text-2xl font-bold text-white">With Orin</h3>
             </div>
 
             <div className="space-y-4">
               {withItems.map((item, index) => (
                 <div key={index} className="flex items-start gap-3 group">
-                  <Check className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-gray-200 font-medium">{item}</span>
                 </div>
               ))}

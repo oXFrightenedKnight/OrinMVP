@@ -59,11 +59,10 @@ export function ServicesSection() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  Automatic Block of Suspicious Activity
+                  Get Alerts On Metric Spikes
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Our AI will track your metrics and block suspicous addresses before they do
-                  significant damage
+                  Our AI will track your metrics and alert you when unusual activity happens
                 </p>
               </div>
               <Zap className="w-8 h-8 text-accent" />
@@ -81,10 +80,10 @@ export function ServicesSection() {
 
           {/* Monthly Revenue - Pie Chart */}
           <Card
-            className="p-6 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
+            className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
             style={{ animationDelay: "2s" }}
           >
-            <div className="flex items-center justify-between mb-4 border border-red-500">
+            <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-semibold text-foreground">See Your Real Margin</h3>
                 <p className="text-sm text-muted-foreground">
@@ -94,60 +93,15 @@ export function ServicesSection() {
               </div>
               <DollarSign className="w-8 h-8 text-primary" />
             </div>
-            <div className="relative h-[200px] w-full flex items-center justify-center">
-              <svg viewBox="0 0 200 200" className="w-48 h-48">
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="80"
-                  fill="none"
-                  stroke="oklch(0.15 0.03 240)"
-                  strokeWidth="40"
-                  className="opacity-20"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="80"
-                  fill="none"
-                  stroke="oklch(0.6 0.18 220)"
-                  strokeWidth="40"
-                  strokeDasharray="440 503"
-                  strokeDashoffset="-125"
-                  className="transition-all duration-1000"
-                  transform="rotate(-90 100 100)"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r="80"
-                  fill="none"
-                  stroke="oklch(0.65 0.2 200)"
-                  strokeWidth="40"
-                  strokeDasharray="125 503"
-                  strokeDashoffset="0"
-                  className="transition-all duration-1000"
-                  transform="rotate(-90 100 100)"
-                />
-                <text
-                  x="100"
-                  y="95"
-                  textAnchor="middle"
-                  className="text-2xl font-bold fill-foreground"
-                  dominantBaseline="middle"
-                >
-                  87%
-                </text>
-                <text
-                  x="100"
-                  y="115"
-                  textAnchor="middle"
-                  className="text-xs fill-muted-foreground"
-                  dominantBaseline="middle"
-                >
-                  Profit Margin
-                </text>
-              </svg>
+            <div className="items-center flex justify-center h-full">
+              <Image
+                alt="real monthly revenue chart"
+                src="/RealMMRFixed2.png"
+                width={400}
+                height={300}
+                unoptimized
+                className="mask-radial"
+              ></Image>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
               <div className="flex items-center gap-2">
@@ -163,47 +117,29 @@ export function ServicesSection() {
 
           {/* Cost Breakdown - Mixed Chart */}
           <Card
-            className="p-6 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
+            className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
             style={{ animationDelay: "3s" }}
           >
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  AI-Powered Analyzis (or Forecasting)
+                  All SaaS Metrics In One App
                 </h3>
-                <p className="text-sm text-muted-foreground">Take a look in the future</p>
+                <p className="text-sm text-muted-foreground">
+                  Track your Stripe revenue, AI usage, DB fees, and Infra costs in one app
+                </p>
               </div>
               <TrendingUp className="w-8 h-8 text-primary" />
             </div>
-            <div className="relative h-[200px] w-full">
-              <svg viewBox="0 0 400 200" className="w-full h-full">
-                {/* Grid lines */}
-                {[0, 50, 100, 150, 200].map((y) => (
-                  <line
-                    key={y}
-                    x1="0"
-                    y1={y}
-                    x2="400"
-                    y2={y}
-                    stroke="oklch(0.15 0.03 240)"
-                    strokeWidth="1"
-                    strokeDasharray="4 4"
-                  />
-                ))}
-                {/* Area under curve */}
-                <path
-                  d="M 0 180 L 50 160 L 100 140 L 150 115 L 200 95 L 250 80 L 300 70 L 350 65 L 400 60 L 400 200 L 0 200 Z"
-                  fill="oklch(0.6 0.18 220)"
-                  fillOpacity="0.2"
-                />
-                {/* Main line */}
-                <path
-                  d="M 0 180 L 50 160 L 100 140 L 150 115 L 200 95 L 250 80 L 300 70 L 350 65 L 400 60"
-                  fill="none"
-                  stroke="oklch(0.6 0.18 220)"
-                  strokeWidth="3"
-                />
-              </svg>
+            <div className="items-center flex justify-center h-full">
+              <Image
+                alt="real monthly revenue chart"
+                src="/IntegrationsCard2.svg"
+                width={400}
+                height={300}
+                unoptimized
+                className="mask-radial"
+              ></Image>
             </div>
             <div className="mt-4 flex items-center justify-between text-sm">
               <span className="text-muted-foreground">Cumulative savings</span>
