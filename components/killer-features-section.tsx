@@ -25,7 +25,11 @@ export function KillerFeaturesSection() {
       icon: Sparkles,
       title: "AI-Powered Explanations",
       description: "Orin interprets your numbers and explains them in plain English.",
-      highlights: ["Real-time calculations", "Detailed breakdowns", "No hidden costs"],
+      highlights: [
+        "Translates complex data into clear explanations",
+        "Summarizes and explains changes",
+        "Sends human-readable weekly financial reports",
+      ],
       color: "purple",
     },
     {
@@ -33,14 +37,22 @@ export function KillerFeaturesSection() {
       title: "AI Anomaly Detection",
       description:
         "Orin can spot unexpected behavior instantly and catch sudden token spikes, storage surges, bandwidth jumps, etc.",
-      highlights: ["Expense categorization", "Cost leak detection", "Trend analysis"],
+      highlights: [
+        "Flags unusual patterns in real time",
+        "Identifies inefficient usage",
+        "Warns you before bills grow out of control",
+      ],
       color: "blue",
     },
     {
       icon: TrendingUp,
       title: "AI Trend Forecasting",
       description: "Orin delivers simple short-term predictions based on real usage patterns.",
-      highlights: ["Smart suggestions", "Cost optimization", "Growth strategies"],
+      highlights: [
+        "Helps scaling costs",
+        "Suggests optimizations based on expected trends",
+        "Shows which categories will grow fastest",
+      ],
       color: "blue",
     },
   ];
@@ -74,7 +86,7 @@ export function KillerFeaturesSection() {
             return (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-2xl p-8  `}
+                className={`group relative bg-gradient-to-br from-white/5 to-white/[0.02] border border-primary rounded-2xl p-8  `}
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${
@@ -93,7 +105,9 @@ export function KillerFeaturesSection() {
 
                   <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
 
-                  <p className="text-gray-400 mb-6 leading-relaxed">{feature.description}</p>
+                  <p className="text-gray-400 mb-6 leading-relaxed min-h-[5rem]">
+                    {feature.description}
+                  </p>
 
                   <ul className="space-y-3">
                     {feature.highlights.map((highlight, idx) => (

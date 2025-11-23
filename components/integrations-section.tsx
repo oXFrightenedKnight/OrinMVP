@@ -1,24 +1,21 @@
-"use client"
+"use client";
+
+import Image from "next/image";
 
 type Integration = {
-  name: string
-  logo: string
-}
+  name: string;
+  src: string;
+};
 
 const integrations: Integration[] = [
-  { name: "Stripe", logo: "💳" },
-  { name: "AWS", logo: "☁️" },
-  { name: "OpenAI", logo: "🧠" },
-  { name: "Vercel", logo: "▲" },
-  { name: "Supabase", logo: "🟢" },
-  { name: "Cloudflare", logo: "☀️" },
-  { name: "MongoDB", logo: "🍃" },
-  { name: "Anthropic", logo: "✨" },
-  { name: "Google Cloud", logo: "🌐" },
-  { name: "Twilio", logo: "🔔" },
-  { name: "SendGrid", logo: "✉️" },
-  { name: "GitHub", logo: "🐙" },
-]
+  { name: "Stripe", src: "/logos/stripe.svg" },
+  { name: "OpenAI", src: "/logos/openai.svg" },
+  { name: "Supabase", src: "/logos/supabase.svg" },
+  { name: "Cloudflare", src: "/logos/cloudflare.svg" },
+  { name: "Clerk", src: "/logos/clerk.svg" },
+  { name: "Neon", src: "/logos/neon.svg" },
+  { name: "DigitalOcean", src: "/logos/digitalocean.svg" },
+];
 
 export function IntegrationsSection() {
   return (
@@ -28,7 +25,7 @@ export function IntegrationsSection() {
           Integrates with your <span className="text-primary">entire stack</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Connect all your SaaS tools in minutes. We support 100+ integrations and counting.
+          Connect all your SaaS tools in minutes. We support 10+ integrations and more coming soon.
         </p>
       </div>
 
@@ -38,16 +35,20 @@ export function IntegrationsSection() {
           {[...integrations, ...integrations].map((integration, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex items-center gap-3 px-8 py-4 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              className="flex-shrink-0 flex items-center gap-3 px-8 py-4 backdrop-blur-sm rounded-xl"
             >
               <span className="text-4xl" aria-hidden="true">
-                {integration.logo}
+                <Image
+                  alt={`${integration.name} logo`}
+                  src={integration.src}
+                  width={125}
+                  height={125}
+                ></Image>
               </span>
-              <span className="text-lg font-semibold whitespace-nowrap">{integration.name}</span>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

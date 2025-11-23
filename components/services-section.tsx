@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Zap, DollarSign } from "lucide-react";
+import { TrendingUp, Zap, DollarSign, ChartBar } from "lucide-react";
 import Image from "next/image";
 
 export function ServicesSection() {
@@ -22,13 +22,18 @@ export function ServicesSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Bandwidth Usage - Line Chart */}
-          <Card className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle">
+          <Card className="p-6 bg-background/50 border-primary/20">
             {/* top-left text */}
-            <div className="flex flex-col">
-              <h3 className="text-lg font-semibold text-foreground">Simple and Intuitive Graphs</h3>
-              <p className="text-sm text-muted-foreground">
-                See what&apos;s happening to your SaaS with every detail
-              </p>
+            <div className="flex justify-between">
+              <div className="flex flex-col">
+                <h3 className="text-lg font-semibold text-foreground">
+                  Simple and Intuitive Graphs
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  See what&apos;s happening to your SaaS with every detail
+                </p>
+              </div>
+              <ChartBar className="w-8 h-8 text-primary" />
             </div>
 
             {/* center image */}
@@ -43,17 +48,17 @@ export function ServicesSection() {
             </div>
 
             <div className="mt-4 flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Last 7 days</span>
+              <span className="text-muted-foreground">Updated 3 minutes ago</span>
               <span className="text-primary font-semibold flex items-center gap-1">
                 <TrendingUp className="w-4 h-4" />
-                +12.5%
+                Usage up 12.5% this week
               </span>
             </div>
           </Card>
 
           {/* Suspicious activity block */}
           <Card
-            className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
+            className="p-6 bg-background/50 border-primary/20 "
             style={{ animationDelay: "1s" }}
           >
             <div className="flex items-center justify-between mb-4">
@@ -65,30 +70,40 @@ export function ServicesSection() {
                   Our AI will track your metrics and alert you when unusual activity happens
                 </p>
               </div>
-              <Zap className="w-8 h-8 text-accent" />
+              <Zap className="w-8 h-8 text-primary" />
             </div>
             <div className="items-center flex justify-center h-full">
               <Image
                 alt="alert icon"
-                src="/alert.svg"
+                src="/alerticon.svg"
                 width={400}
                 height={300}
                 className="mask-radial"
               ></Image>
             </div>
+            <div className="mt-4 flex justify-between gap-2 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-primary" />
+                <span className="text-muted-foreground">Monitoring 14 metrics</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-accent" />
+                <span className="text-muted-foreground">2 anomalies detected today</span>
+              </div>
+            </div>
           </Card>
 
           {/* Monthly Revenue - Pie Chart */}
           <Card
-            className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
+            className="p-6 bg-background/50 border-primary/20 "
             style={{ animationDelay: "2s" }}
           >
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-lg font-semibold text-foreground">See Your Real Margin</h3>
                 <p className="text-sm text-muted-foreground">
-                  We calculate net revenue after ALL expenses: hosting, AI, egress, storage,
-                  proxies, Stripe fees. No more boring spreadsheets and manual cost tracking.
+                  We calculate net revenue after ALL expenses. No more boring spreadsheets and
+                  manual cost tracking.
                 </p>
               </div>
               <DollarSign className="w-8 h-8 text-primary" />
@@ -103,7 +118,7 @@ export function ServicesSection() {
                 className="mask-radial"
               ></Image>
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <div className="mt-4 flex justify-between text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-primary" />
                 <span className="text-muted-foreground">Revenue</span>
@@ -117,7 +132,7 @@ export function ServicesSection() {
 
           {/* Cost Breakdown - Mixed Chart */}
           <Card
-            className="p-6 bg-background/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-float-gentle"
+            className="p-6 bg-background/50 border-primary/20 "
             style={{ animationDelay: "3s" }}
           >
             <div className="flex items-center justify-between mb-4">
@@ -142,14 +157,14 @@ export function ServicesSection() {
               ></Image>
             </div>
             <div className="mt-4 flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Cumulative savings</span>
-              <span className="text-primary font-semibold">$47,280</span>
+              <span className="text-muted-foreground">Synced with 9 providers</span>
+              <span className="text-primary font-semibold">Last sync: 6 minutes ago</span>
             </div>
           </Card>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="p-6 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all">
+          <Card className="p-6 bg-card/30 border-primary/10">
             <div className="text-primary text-3xl font-bold mb-2">Real-time</div>
             <h3 className="text-xl font-semibold mb-2">Instant Visibility</h3>
             <p className="text-muted-foreground">
@@ -157,15 +172,15 @@ export function ServicesSection() {
               real-time, giving you complete transparency.
             </p>
           </Card>
-          <Card className="p-6 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all">
+          <Card className="p-6 bg-card/30 border-primary/10">
             <div className="text-primary text-3xl font-bold mb-2">30%</div>
             <h3 className="text-xl font-semibold mb-2">Average Savings</h3>
             <p className="text-muted-foreground">
-              Stop overpaying. Identify unused subscriptions, negotiate better rates, and optimize
-              your spending automatically.
+              Unused subscriptions, token spikes, overpriced plans — Orin finds everything
+              you&apos;re overpaying for and helps fix it automatically.
             </p>
           </Card>
-          <Card className="p-6 bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all">
+          <Card className="p-6 bg-card/30 border-primary/10">
             <div className="text-primary text-3xl font-bold mb-2">Zero</div>
             <h3 className="text-xl font-semibold mb-2">Hidden Costs</h3>
             <p className="text-muted-foreground">

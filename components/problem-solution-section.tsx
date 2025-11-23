@@ -52,7 +52,7 @@ export function ProblemSolutionSection() {
           {/* With */}
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Check className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-white">With Orin</h3>

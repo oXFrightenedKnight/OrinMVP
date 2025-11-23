@@ -15,6 +15,13 @@ export function HeroSection() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,28 +75,26 @@ export function HeroSection() {
         </h1>
 
         <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed">
-          Track every dollar, optimize every expense, and scale with confidence. Get complete
-          visibility into your SaaS spending.
+          Track every dollar, avoid surprises, and finally understand what your SaaS is really
+          costing you.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-200 mb-12">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
-            asChild
+            className="cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+            onClick={() => scrollToSection("waitlist")}
           >
-            <a href="#waitlist">
-              Join the Waitlist
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            Join the Waitlist
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-primary/20 text-foreground hover:bg-primary/5 hover:border-primary font-semibold px-8 py-6 text-lg backdrop-blur-sm bg-card/50"
-            asChild
+            className="cursor-pointer border-2 border-primary/20 text-foreground hover:bg-primary/5 hover:border-primary font-semibold px-8 py-6 text-lg backdrop-blur-sm bg-card/50"
+            onClick={() => scrollToSection("features")}
           >
-            <a href="#features">See How It Works</a>
+            See How It Works
           </Button>
         </div>
 
@@ -103,7 +108,7 @@ export function HeroSection() {
               className="w-2 h-2 rounded-full bg-primary animate-pulse"
               style={{ animationDelay: "0.5s" }}
             />
-            <span>Real-time Insights</span>
+            <span>AI-Powered Insights</span>
           </div>
           <div className="flex items-center gap-2">
             <div

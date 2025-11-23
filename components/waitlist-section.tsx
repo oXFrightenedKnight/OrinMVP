@@ -1,24 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import { CheckCircle2, Mail, Sparkles } from 'lucide-react'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
+import { CheckCircle2, Mail, Sparkles } from "lucide-react";
 
 export function WaitlistSection() {
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     // Handle waitlist submission
-    setSubmitted(true)
+    setSubmitted(true);
     setTimeout(() => {
-      setSubmitted(false)
-      setEmail("")
-    }, 5000)
-  }
+      setSubmitted(false);
+      setEmail("");
+    }, 5000);
+    await fetch("/api/waitlist", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
+  };
 
   return (
     <section id="waitlist" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -45,7 +49,8 @@ export function WaitlistSection() {
               Join the <span className="text-primary">Waitlist</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Be among the first to experience complete SaaS expense transparency. Early members get lifetime 50% off.
+              Be among the first to experience complete SaaS expense transparency. Early members get
+              lifetime 50% off.
             </p>
           </div>
 
@@ -72,7 +77,7 @@ export function WaitlistSection() {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground text-center mt-4">
-                No credit card required. Join 2,547+ people on the waitlist.
+                No credit card required. Join 50+ people on the waitlist.
               </p>
             </form>
           ) : (
@@ -80,16 +85,17 @@ export function WaitlistSection() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <CheckCircle2 className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">You're on the list!</h3>
+              <h3 className="text-xl font-semibold mb-2">You&apos;re on the list!</h3>
               <p className="text-muted-foreground">
-                We'll send you an email when we're ready to launch. Get ready for expense clarity!
+                We&apos;ll send you an email when we&apos;re ready to launch. Get ready for expense
+                clarity!
               </p>
             </div>
           )}
 
           <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-primary/10">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary mb-1">100+</div>
+              <div className="text-2xl font-bold text-primary mb-1">10+</div>
               <div className="text-sm text-muted-foreground">Integrations</div>
             </div>
             <div className="text-center">
@@ -104,5 +110,5 @@ export function WaitlistSection() {
         </Card>
       </div>
     </section>
-  )
+  );
 }
