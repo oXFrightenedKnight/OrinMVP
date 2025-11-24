@@ -1,45 +1,31 @@
 import { NextResponse } from "next/server";
-
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 
 export async function POST(req: Request) {
   try {
-    const { email } = await req.json();
+    const { email } = (await req.json()) as { email: string };
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
-      auth: {
-        user: process.env.NOTIFY_EMAIL,
-        pass: process.env.NOTIFY_PASS,
-      },
-    });
+      auth: { user: process.env.NOTIFY_EMAIL, pass: process.env.NOTIFY_PASS },
+    } satisfies SMTPTransport.Options);
 
     await transporter.verify();
-    console.log("Server is ready to take our messages");
 
     const info = await transporter.sendMail({
-      from: `"Orin Waitlist" <${process.env.NOTIFY_EMAIL}>`, // sender address
-      to: process.env.MY_PERSONAL_EMAIL, // list of receivers
-      subject: "New waitlist signup", // Subject line
-      text: `New user signed up: ${email}`, // plain text body
-      html: `<p>New waitlist signup:</p><h2>${email}</h2>`, // html body
+      from: `"Orin Waitlist" <${process.env.NOTIFY_EMAIL}>`,
+      to: process.env.MY_PERSONAL_EMAIL,
+      subject: "New waitlist signup",
+      text: `New user signed up: ${email}`,
+      html: `<p>New waitlist signup:</p><h2>${email}</h2>`,
     });
 
-    console.log("Message sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    return NextResponse.json(
-      { ok: true },
-      {
-        status: 200,
-        headers: {
-          "Set-Cookie": `waitlisted=true; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Strict`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    return NextResponse.json({ ok: true, messageId: info.messageId }, { status: 200 });
   } catch (err) {
+    console.error("Waitlist mail failed", err);
     return NextResponse.json({ error: "mail failed" }, { status: 500 });
   }
 }
