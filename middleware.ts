@@ -1,7 +1,7 @@
 // middleware.ts
 import { NextRequest, NextResponse } from "next/server";
 
-const rateLimit = new Map();
+const rateLimit = new Map<string, number>();
 
 export function middleware(req: NextRequest) {
   const isWaitlisted = req.cookies.get("waitlisted")?.value;

@@ -56,7 +56,7 @@ export function WaitlistSection() {
           </div>
 
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <form onSubmit={(e) => void handleSubmit(e)} className="max-w-md mx-auto">
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex-1 relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
