@@ -7,9 +7,9 @@ export async function POST(req: Request) {
     const { email } = await req.json();
 
     const transporter = nodemailer.createTransport({
-      host: "http://localhost:3000",
-      port: 587,
-      secure: false,
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.NOTIFY_EMAIL,
         pass: process.env.NOTIFY_PASS,
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     console.log("Server is ready to take our messages");
 
     const info = await transporter.sendMail({
-      from: '"Orin Waitlist" <process.env.NOTIFY_EMAIL>', // sender address
+      from: `"Orin Waitlist" <${process.env.NOTIFY_EMAIL}>`, // sender address
       to: process.env.MY_PERSONAL_EMAIL, // list of receivers
       subject: "New waitlist signup", // Subject line
       text: `New user signed up: ${email}`, // plain text body
@@ -29,7 +29,16 @@ export async function POST(req: Request) {
 
     console.log("Message sent: %s", info.messageId);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    return NextResponse.json({ ok: true });
+    return NextResponse.json(
+      { ok: true },
+      {
+        status: 200,
+        headers: {
+          "Set-Cookie": `waitlisted=true; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Strict`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
   } catch (err) {
     return NextResponse.json({ error: "mail failed" }, { status: 500 });
   }

@@ -21,6 +21,7 @@ export function WaitlistSection() {
     await fetch("/api/waitlist", {
       method: "POST",
       body: JSON.stringify({ email }),
+      headers: { "Content-Type": "application/json" },
     });
   };
 
